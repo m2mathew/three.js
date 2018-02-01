@@ -56,7 +56,10 @@ Menubar.File = function ( editor ) {
 
 	var fileInput = document.createElement( 'input' );
 	fileInput.type = 'file';
+	fileInput.multiple = true;
 	fileInput.addEventListener( 'change', function ( event ) {
+
+		console.log('editor is:', editor);
 
 		editor.loader.loadFile( fileInput.files[ 0 ] );
 		form.reset();
