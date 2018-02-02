@@ -65,7 +65,7 @@ Menubar.File = function ( editor ) {
 
 		if ( Object.keys( importedFiles ).length > 1 ) {
 
-			for ( var file in importedFiles ) {
+			for ( let file of Object.values( importedFiles ) ) {
 
 				console.log( '1', file );
 
@@ -73,7 +73,7 @@ Menubar.File = function ( editor ) {
 
 			}
 
-		} else editor.loader.loadFile( fileInput.files[ 0 ] );
+		} else editor.loader.loadFile( importedFiles[ 0 ] );
 		form.reset();
 
 	} );
