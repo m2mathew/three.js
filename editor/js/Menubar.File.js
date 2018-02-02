@@ -59,9 +59,21 @@ Menubar.File = function ( editor ) {
 	fileInput.multiple = true;
 	fileInput.addEventListener( 'change', function ( event ) {
 
-		console.log('editor is:', editor);
+		var importedFiles = fileInput.files;
 
-		editor.loader.loadFile( fileInput.files[ 0 ] );
+		console.log( 'type', importedFiles );
+
+		if ( Object.keys( importedFiles ).length > 1 ) {
+
+			for ( var file in importedFiles ) {
+
+				console.log( '1', file );
+
+				editor.loader.loadFile( file );
+
+			}
+
+		} else editor.loader.loadFile( fileInput.files[ 0 ] );
 		form.reset();
 
 	} );
