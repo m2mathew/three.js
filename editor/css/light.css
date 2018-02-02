@@ -91,6 +91,10 @@ select {
 		padding-right: 8px;
 	}
 
+	#menubar .logo {
+		padding-left: 16px;
+	}
+
 	#menubar .menu.right {
 		float: right;
 		cursor: auto;

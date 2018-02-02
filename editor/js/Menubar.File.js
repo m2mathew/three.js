@@ -50,24 +50,24 @@ Menubar.File = function ( editor ) {
 
 	// Import
 
-	var form = document.createElement( 'form' );
+	const form = document.createElement( 'form' );
 	form.style.display = 'none';
 	document.body.appendChild( form );
 
-	var fileInput = document.createElement( 'input' );
+	const fileInput = document.createElement( 'input' );
 	fileInput.type = 'file';
 	fileInput.multiple = true;
 	fileInput.addEventListener( 'change', function ( event ) {
 
-		var importedFiles = fileInput.files;
+		const importedFiles = fileInput.files;
 
-		console.log( 'type', importedFiles );
+		console.log( 'files imported →', importedFiles );
 
 		if ( Object.keys( importedFiles ).length > 1 ) {
 
 			for ( let file of Object.values( importedFiles ) ) {
 
-				console.log( '1', file );
+				console.log( 'file', file );
 
 				editor.loader.loadFile( file );
 

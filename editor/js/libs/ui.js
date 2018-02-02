@@ -180,6 +180,22 @@ UI.Div = function () {
 UI.Div.prototype = Object.create( UI.Element.prototype );
 UI.Div.prototype.constructor = UI.Div;
 
+
+// Img
+
+UI.Img = function () {
+
+	UI.Element.call( this );
+
+	this.dom = document.createElement( 'img' );
+
+	return this;
+
+};
+
+UI.Img.prototype = Object.create( UI.Element.prototype );
+UI.Img.prototype.constructor = UI.Img;
+
 // Row
 
 UI.Row = function () {
@@ -863,9 +879,9 @@ UI.Integer.prototype.setValue = function ( value ) {
 };
 
 UI.Integer.prototype.setStep = function ( step ) {
-	
-	this.step = parseInt( step ); 
-	
+
+	this.step = parseInt( step );
+
 	return this;
 
 };
